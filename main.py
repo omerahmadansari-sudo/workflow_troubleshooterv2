@@ -216,7 +216,7 @@ SUPPORT_QUESTIONS: Dict[str, Dict] = {
         "questions": [
             {
                 "id": "calendar_symptom",
-                "text": "What’s going wrong with the calendar?",
+                "text": "Whatâ€™s going wrong with the calendar?",
                 "type": "single_choice",
                 "required": True,
                 "options": [
@@ -334,7 +334,7 @@ DIAGNOSIS_LIBRARY = {
         ],
         "fix_steps": [
             "Open the workflow trigger and review all filters.",
-            "Check the test contact’s fields, tags, and values.",
+            "Check the test contactâ€™s fields, tags, and values.",
             "Temporarily simplify the trigger and test again."
         ],
         "retest_steps": [
@@ -518,7 +518,7 @@ DIAGNOSIS_LIBRARY = {
             "Retest using a simpler path."
         ],
         "retest_steps": [
-            "Watch the contact’s workflow history.",
+            "Watch the contactâ€™s workflow history.",
             "Confirm whether the send step is reached."
         ],
         "hint": "Check earlier workflow branches first."
