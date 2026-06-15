@@ -697,5 +697,27 @@ def get_scores_for_workflow(answers: Dict[str, str]) -> Dict[str, int]:
         "conflicting_automation": 0,
         "workflow_recent_change_breakage": 0,
     }
+@app.get("/")
+def read_root():
+    return {"message": "Support Troubleshoot Wizard API is running"}
 
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
+@app.get("/support/issues")
+def get_support_issues():
+    return SUPPORT_ISSUES
+
+
+@app.get("/support/questions/{issue_type}", response_model=IssueQuestionsResponse)
+def get_support_questions(issue_type: str):
+    return build_support_questions(issue_type)
+
+
+@app.post("/support/diagnose", response_model=DiagnoseResponse)
+def diagnose_support_issue(payload: DiagnoseRequest):
+    return build_diagnosis_response(payload.issue_type, payload.answers)
     
